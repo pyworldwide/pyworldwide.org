@@ -1,0 +1,416 @@
+a {
+    text-decoration: underline;
+}
+
+.basis-0 {
+    flex-basis: 0;
+}
+
+.formulate-input-error {
+    list-style: none;
+    margin-left: -.5em;
+    color: red;
+}
+
+summary {
+    cursor: pointer;
+}
+
+li {
+    margin: .5em 0;
+    /* numbers */
+}
+
+ol li {
+    list-style-type: decimal;
+}
+
+ol,
+ul {
+    margin-left: 1em;
+}
+
+pre {
+    overflow: auto;
+    padding: .75em;
+    margin: .5em 0;
+    background-color: #efe;
+    font-size: .8em;
+}
+
+.formulate-input input {
+    width: 100%;
+}
+
+.formulate-input textarea {
+    width: 100%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.request-table {
+}
+
+.request-table td {
+    vertical-align: top;
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+/***************** experiments */
+
+#experiments {
+    position: relative;
+}
+
+#experiments h3 {
+    font-weight: bold;
+    margin: 2em 0;
+    display: inline;
+}
+
+/* screenshot */
+#experiments img {
+    display: block; 
+    margin-top: 0.5rem; 
+    margin-bottom: 1rem; 
+    border-width: 1px; 
+    border-color: #047857; 
+    border-style: dashed; 
+    padding: .25rem;
+}
+
+#experiments .steps {
+   padding-left: 1em;
+   margin-left: 0;
+   padding-left: 2em;
+   text-indent: -1em;
+}
+
+#experiments .steps li:before {
+    content: "✓";
+    padding-right: .25em;
+    color: #047857; 
+}
+
+.experiment details {
+    background: #efe;
+    padding: 1em;
+}
+
+ul.explanation-list {
+    position: relative;
+    padding-left: 3em;
+}
+.explanation-list li:before {
+    position: absolute;
+    left: 0;
+    content: " ";
+    width: 4em;
+    flex-shrink: 0;
+}
+
+.normal-list li {
+    list-style-type: disc;
+}
+
+.explanation-list li:before {
+    font-family: 'icomoon' !important;
+}
+.explanation-list li.you:before {
+    content: "👤";
+}
+
+.explanation-list li.browser:before {
+    content: "🌐➡";
+    color: rebeccapurple;
+}
+
+.explanation-list li.server:before {
+    content: "💻⬅";
+    color: blue;
+}
+
+.explanation-list li.resolver:before {
+    content: "💻⬅";
+    color: green;
+}
+
+.explanation-list li.example:before {
+    content: "💻";
+    color: #333;
+}
+
+.explanation-list li.resolver.action:before {
+    content: "💻";
+}
+
+.action {
+    font-style: italic;
+}
+
+.action:before {
+    font-style: normal;
+}
+
+
+#experiments .wont:before,  #experiments .wont:after {
+    content: "✕";
+    color: red;
+    padding: 0 .25em;
+}
+
+details.experiment {
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.tutorial details.experiment {
+    background-color: rgba(251, 207, 232, 0.7);
+}
+
+.tutorial .details-modal .details-modal-content {
+    border-top-color: rgba(251, 207, 232);
+}
+
+.weird details.experiment {
+    background-color: rgba(221, 214, 254, 0.7);
+}
+
+.weird .details-modal .details-modal-content {
+    border-top-color: rgba(221, 214, 254);
+}
+
+.useful details.experiment {
+    background-color: rgba(191, 219, 254, 0.7);
+}
+
+.useful .details-modal .details-modal-content {
+    border-top-color: rgba(191, 219, 254);
+}
+
+#experiments details.experiment[open] .category {
+    display: none;
+}
+
+#experiments ol {
+    list-style-type: decimal;
+}
+
+#experiments p {
+    margin: 1em 0;
+}
+
+.record-expl li {
+    list-style-type: none;
+    line-height: 1em;
+}
+
+.record-expl {
+    padding: 0;
+    margin: 0;
+}
+
+/* button */
+button#create {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; 
+    padding-left: 1rem;
+    padding-right: 1rem; 
+    background-color: #10B981; 
+    color: #ffffff; 
+    border-radius: 0.25rem; 
+}
+
+button#create:hover {
+    background-color: #047857; 
+}
+
+
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+summary {
+    /* this is needed because otherwise on ipad we get a big ugly outline */
+    outline:none;
+}
+
+.details-modal {
+    background: #ffffff;
+    border-radius: 0.5em;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.details-modal .details-modal-close {
+    align-items: center;
+    color: #111827;
+    display: flex;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: url('/images/x.svg');
+    background-repeat: no-repeat;
+    background-position: 2.5rem center; 
+    justify-content: center;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.details-modal .details-modal-close svg {
+    display: block;
+}
+
+.details-modal .details-modal-title {
+    color: #111827;
+    padding: 1.5em 2em;
+    pointer-events: all;
+    position: relative;
+    width: calc(100% - 4.5em);
+}
+
+.details-modal .details-modal-title h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.details-modal .details-modal-content {
+    border-top: 4px solid #e0e0e0;
+    padding: 1em 2em;
+    pointer-events: all;
+    overflow: auto;
+}
+
+.details-modal-overlay {
+    transition: opacity 0.2s ease-out;
+    pointer-events: none;
+    background: white;
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .details-modal-overlay {
+        left: 50%;
+    }
+}
+
+nav {
+    z-index: 10;
+}
+
+details[open] .details-modal-overlay {
+    pointer-events: all;
+    opacity: 0.9;
+    z-index: 2;
+}
+
+details .details-modal-close {
+}
+
+.details-modal-title {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 586px) {
+  #nav .nav-row {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* titlebar link */
+.star-link {
+  position: relative;
+}
+
+.star-link .star {
+  position: relative;
+  display: inline-block;
+  transition: all 200ms ease;
+}
+
+.star-link:hover .star:nth-child(1) {
+  transform: rotate(-20deg) translateX(-2px) translateY(-4px);
+}
+
+.star-link:hover .star:nth-child(2) {
+  transform: rotate(20deg) translateX(2px) translateY(-4px);
+}
+
+.section h2 {
+    display: flex;
+    align-items: center;
+}
+
+.section h2 svg {
+    margin-right: .5em;
+    width: 1.2em;
+}
+
+input, select, textarea {
+    border: 1px solid #888;
+    padding: .25em;
+    margin-top: .5em;
+    border-radius: 5px;
+}
+
+.form-record {
+    display: flex;
+    margin-right: auto;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+.form-field {
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+.form-field label {
+    display: block;
+}
+
+.form-field input {
+    display: block;
+    width: 10rem;
+}
+
+/* invalid input */
+.form-field input:user-invalid {
+    border-color: red;
+}
+

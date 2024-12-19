@@ -1,0 +1,36 @@
+[
+    {
+      "Our Volunteers": [
+        {
+          "image": "https://avatars.githubusercontent.com/u/4660275?v=4",
+          "name": "Nikita Sobolevn",
+          "position": "Core CPython Developer",
+          "link": {
+            "url": "https://github.com/sobolevn",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        {
+          "image": "https://avatars.githubusercontent.com/u/81439109?v=4",
+          "name": "KANISHK PACHAURI",
+          "position": "OSS Python Dev",
+          "link": {
+            "url": "https://github.com/Mr-Sunglasses/",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        {
+          "image": "https://avatars.githubusercontent.com/u/44317853?v=4",
+          "name": "Swastika Yadav",
+          "position": "PyLadies Team",
+          "link": {
+            "url": "https://github.com/swastika0015",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        }
+      ]
+    }
+  ]
