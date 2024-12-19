@@ -1,6 +1,5 @@
 import Navbar from '@/components/Navbar';
 import WhatWeDo from '@/components/WhatWeDo';
-import Topics from '@/components/Topics';
 import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
 import "../css/squiggle.css"
@@ -18,7 +17,6 @@ export default function Home() {
       </header>
       <main className="container mx-auto px-4 py-8">
         <WhatWeDo />
-        {/* <Topics /> */}
       </main>
       <Newsletter />
       <Footer />
