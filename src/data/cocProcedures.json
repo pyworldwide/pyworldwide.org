@@ -1,7 +1,7 @@
 {
     "reporting": {
       "title": "General Reporting Procedure",
-      "description": "Steps for doing a proper report of an event that happened in the conference",
+      "description": "Steps for doing a proper report of an event that happened in the meetup",
       "sections": [
         {
           "title": "General Reporting Procedure",
@@ -27,7 +27,7 @@
             "Location of incident",
             "Whether the incident is ongoing",
             "Description of the incident",
-            "Identifying information of the reported person: name, screen name (Slack, etc.), physical appearance, height, clothing, voice accent, identifying information such as company name, or other information displayed on the conference platform.",
+            "Identifying information of the reported person: name, screen name (Slack, etc.), physical appearance, height, clothing, voice accent, identifying information such as company name, or other information displayed on the meetup platform.",
             "Additional circumstances surrounding the incident",
             "Other people involved in or witnesses to the incident and their contact information or description"
           ]
@@ -36,7 +36,7 @@
           "title": "Confidentiality",
           "content": [
             "All reports will be kept confidential. When we discuss incidents with people who are reported, we will anonymize details as much as we can to protect reporter privacy.",
-            "However, some incidents happen in one-on-one interactions, and even if the details are anonymized, the reported person may be able to guess who made the report. If you have concerns about retaliation or your personal safety, please note those in your report. We still encourage you to report, so that we can support you while keeping our conference attendees safe. In some cases, we can compile several anonymized reports into a pattern of behavior, and take action on that pattern.",
+            "However, some incidents happen in one-on-one interactions, and even if the details are anonymized, the reported person may be able to guess who made the report. If you have concerns about retaliation or your personal safety, please note those in your report. We still encourage you to report, so that we can support you while keeping our meetup attendees safe. In some cases, we can compile several anonymized reports into a pattern of behavior, and take action on that pattern.",
             "In some cases, we may determine that a public statement will need to be made. If that's the case, the identities of all individuals involved and reporters will remain confidential unless those individuals instruct us otherwise."
           ]
         },
@@ -47,7 +47,7 @@
             "After an incident responder takes the report, they will immediately consult with the CoC team, unless there is a conflict of interest, in which case any non-interested parties will be contacted.",
             "If the incident is ongoing and needs to be immediately addressed, any lead incident responder may take appropriate action to ensure the safety of everyone involved. If the situation requires it, this may take the form of a referral to an appropriate non-PyWorldWide agency, including the local police. The CoC team is not equipped to handle emergency situations.",
             "If the incident is less urgent, the report will be discussed by the CoC team, who will meet to determine an appropriate response. Examples of possible incident responses are outlined in the Procedure For Incident Response.",
-            "Before the conference, the CoC team review the outlined procedures. After the conference, all CoC team members will attend a debriefing session with the CoC team chair to discuss all incidents and determine any necessary follow-up actions."
+            "Before the meetup, the CoC team review the outlined procedures. After the meetup, all CoC team members will attend a debriefing session with the CoC team chair to discuss all incidents and determine any necessary follow-up actions."
           ]
         },
         {
@@ -99,7 +99,7 @@
         {
           "title": "Acknowledge the Report",
           "content": [
-            "We will have members of the Code of Conduct team online at all times during the conference. Reporters should receive an emailed acknowledgment of the receipt of their report within 2 hours."
+            "We will have members of the Code of Conduct team online at all times during the meetup. Reporters should receive an emailed acknowledgment of the receipt of their report within 2 hours."
           ]
         },
         {
