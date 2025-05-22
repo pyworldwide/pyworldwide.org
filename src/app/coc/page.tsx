@@ -5,6 +5,85 @@ import Link from 'next/link';
 import cocData from '@/data/codeOfConduct.json';
 
 export default function CodeOfConduct() {
+  const renderSectionContent = (section: any) => {
+    if (section.title === "Scope" || section.title === "Inappropriate Behavior") {
+      return (
+        <ul className="list-disc ml-6 mb-4 text-gray-700">
+          {section.content.map((item: any, index: number) => (
+            <li key={index} className="mb-2">{item}</li>
+          ))}
+        </ul>
+      );
+    } else if (section.title === "Our Process") {
+      return section.content.map((paragraph: any, index: number) => {
+        if (paragraph.includes("conference_conduct@pyladies.com")) {
+          const parts = paragraph.split("conference_conduct@pyladies.com");
+          const textBeforeEmail = parts[0];
+          const textAfterOriginalEmail = parts[1] ? parts[1].substring(parts[1].indexOf(" which is monitored")) : " which is monitored by the Code of Conduct team.";
+
+          return (
+            <p key={index} className="mb-4 text-gray-700">
+              {textBeforeEmail}
+              <a href="mailto:info.pyworldwide+coc@gmail.com" className="text-blue-600 hover:underline">
+                info.pyworldwide+coc@gmail.com
+              </a>
+              {textAfterOriginalEmail}
+            </p>
+          );
+        }
+        if (paragraph.startsWith("In case of a conflict of interest, you can individually contact:")) {
+          return (
+            <p key={index} className="mb-4 text-gray-700">
+              In case of a conflict of interest, you can contact{" "}
+              <a href="mailto:info.pyworldwide+coc@gmail.com" className="text-blue-600 hover:underline">
+                info.pyworldwide+coc@gmail.com
+              </a>
+              {" "}with specific mention of the conflict in your email subject.
+            </p>
+          );
+        }
+        if (paragraph.startsWith("Procedure For Reporting Code of Conduct Incidents")) {
+          return (
+            <p key={index} className="mb-4 text-gray-700">
+              <Link href="/coc/reporting" className="text-blue-600 hover:underline">
+                {paragraph.replace(/,$/, '')}
+              </Link>
+            </p>
+          );
+        }
+        if (paragraph.startsWith("Enforcement procedures.")) {
+          return (
+            <p key={index} className="mb-4 text-gray-700">
+              <Link href="/coc/enforcement" className="text-blue-600 hover:underline">
+                {paragraph}
+              </Link>
+            </p>
+          );
+        }
+        return <p key={index} className="mb-4 text-gray-700">{paragraph}</p>;
+      });
+    } else if (section.title === "Consequences") {
+      return section.content.map((paragraph: any, index: number) => {
+        if (paragraph.includes("Enforcement Procedures")) {
+          const parts = paragraph.split("Enforcement Procedures");
+          return (
+            <p key={index} className="mb-4 text-gray-700">
+              {parts[0]}
+              <Link href="/coc/enforcement" className="text-blue-600 hover:underline">
+                Enforcement Procedures
+              </Link>
+              {parts[1]}
+            </p>
+          );
+        }
+        return <p key={index} className="mb-4 text-gray-700">{paragraph}</p>;
+      });
+    }
+    return section.content.map((paragraph: any, index: number) => (
+      <p key={index} className="mb-4 text-gray-700">{paragraph}</p>
+    ));
+  };
+
   return (
     <div className="min-h-screen">
       <header>
@@ -25,11 +104,7 @@ export default function CodeOfConduct() {
                 {section.title}
                 <div className="absolute -bottom-2 left-0 w-full h-4 bg-yellow-300 -z-10 transform -rotate-1"></div>
               </h2>
-              {section.content.map((paragraph, pIndex) => (
-                <p key={pIndex} className="mb-4 text-gray-700">
-                  {paragraph}
-                </p>
-              ))}
+              {renderSectionContent(section)}
             </div>
           ))}
         </section>
