@@ -36,9 +36,36 @@ export default function CodeOfConduct() {
           ))}
         </section>
 
- 
-
-
+        <section className="mb-20 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6 font-serif relative inline-block">
+            Resources
+            <div className="absolute -bottom-2 left-0 w-full h-4 bg-yellow-300 -z-10 transform -rotate-1"></div>
+          </h2>
+          <div className="bg-white p-8 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <h3 className="text-xl font-bold mb-4">Important Documentation</h3>
+            <ul className="space-y-4">
+              <li className="flex items-center">
+                <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                <Link 
+                  href="/coc/enforcement" 
+                  className="text-blue-600 hover:text-blue-800 font-medium underline"
+                >
+                  Code of Conduct Enforcement Procedures
+                </Link>
+              </li>
+              <li className="flex items-center">
+                <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                <Link 
+                  href="/coc/reporting" 
+                  className="text-blue-600 hover:text-blue-800 font-medium underline"
+                >
+                  How to Report a Code of Conduct Incident
+                </Link>
+              </li>
+        
+            </ul>
+          </div>
+        </section>
       </main>
 
       <Newsletter />

@@ -1,0 +1,218 @@
+{
+    "reporting": {
+      "title": "General Reporting Procedure",
+      "description": "Steps for doing a proper report of an event that happened in the conference",
+      "sections": [
+        {
+          "title": "General Reporting Procedure",
+          "content": [
+            "If you believe someone has violated the Code of Conduct, we encourage you to report it. If you are unsure whether the incident is a violation, or whether the space where it happened is covered by the Code of Conduct, we encourage you to still report it. We are fine with receiving reports where we decide to take no action for the sake of creating a safer space."
+          ]
+        },
+        {
+          "title": "Steps for Reporting",
+          "content": [
+            "The best way to contact the Code of Conduct team is by email at <span class=\"font-semibold\">info.pyworldwide+coc@gmail.com</span> which is monitored by the Code of Conduct team.",
+            "In case of a conflict of interest, you can individually contact the same address with specific mention of the conflict in your email subject."
+          ]
+        },
+        {
+          "title": "Report Data",
+          "content": [
+            "When reporting an incident, please include as much information as possible, including:"
+          ],
+          "list": [
+            "Your contact info (so we can get in touch with you if we need to follow up)",
+            "Date and time of the incident",
+            "Location of incident",
+            "Whether the incident is ongoing",
+            "Description of the incident",
+            "Identifying information of the reported person: name, screen name (Slack, etc.), physical appearance, height, clothing, voice accent, identifying information such as company name, or other information displayed on the conference platform.",
+            "Additional circumstances surrounding the incident",
+            "Other people involved in or witnesses to the incident and their contact information or description"
+          ]
+        },
+        {
+          "title": "Confidentiality",
+          "content": [
+            "All reports will be kept confidential. When we discuss incidents with people who are reported, we will anonymize details as much as we can to protect reporter privacy.",
+            "However, some incidents happen in one-on-one interactions, and even if the details are anonymized, the reported person may be able to guess who made the report. If you have concerns about retaliation or your personal safety, please note those in your report. We still encourage you to report, so that we can support you while keeping our conference attendees safe. In some cases, we can compile several anonymized reports into a pattern of behavior, and take action on that pattern.",
+            "In some cases, we may determine that a public statement will need to be made. If that's the case, the identities of all individuals involved and reporters will remain confidential unless those individuals instruct us otherwise."
+          ]
+        },
+        {
+          "title": "Report Handling Procedure",
+          "content": [
+            "When you make a report to an incident responder, they will gather information about the incident according to the Procedure For Incident Response.",
+            "After an incident responder takes the report, they will immediately consult with the CoC team, unless there is a conflict of interest, in which case any non-interested parties will be contacted.",
+            "If the incident is ongoing and needs to be immediately addressed, any lead incident responder may take appropriate action to ensure the safety of everyone involved. If the situation requires it, this may take the form of a referral to an appropriate non-PyWorldWide agency, including the local police. The CoC team is not equipped to handle emergency situations.",
+            "If the incident is less urgent, the report will be discussed by the CoC team, who will meet to determine an appropriate response. Examples of possible incident responses are outlined in the Procedure For Incident Response.",
+            "Before the conference, the CoC team review the outlined procedures. After the conference, all CoC team members will attend a debriefing session with the CoC team chair to discuss all incidents and determine any necessary follow-up actions."
+          ]
+        },
+        {
+          "title": "Following Up With Reporters",
+          "content": [
+            "Within one week of an incident report, a member of the CoC team will follow up with the person who made the report and provided their contact information. The follow-up may include:"
+          ],
+          "list": [
+            "An acknowledgment that the Code of Conduct team discussed the situation",
+            "Whether or not the report was determined to be a violation of the Code of Conduct",
+            "What actions (if any) were taken to correct the reported behavior"
+          ],
+          "additionalContent": [
+            "In some cases, the CoC team members may need to ask additional questions about the incident in order to identify the reported person."
+          ]
+        },
+        {
+          "title": "Conflicts of Interest",
+          "content": [
+            "If an incident responder has a conflict of interest for a report, they will recuse themselves from the discussion and handling of the incident. The incident documentation will not be available to them, and they will excuse themselves from any conversations involving handling the incident.",
+            "Should more than two members of the CoC lead responders need to recuse themselves, another PyWorldWide organizer will step in as a temporary lead incident responder."
+          ]
+        }
+      ]
+    },
+    "enforcing": {
+      "title": "General Enforcing Procedure",
+      "description": "This document summarizes the procedures the PyWorldWide CoC team uses to enforce the Code of Conduct.",
+      "sections": [
+        {
+          "title": "Summary of Processes",
+          "content": [
+            "When the work group receives a report of a possible Code of Conduct violation, it will:"
+          ],
+          "orderedList": [
+            "Acknowledge the receipt of the report.",
+            "Evaluate conflicts of interest.",
+            "Call a meeting of Code of Conduct responders who do not have a conflict of interest.",
+            "Evaluate the reported incident.",
+            "Propose a behavioral modification plan.",
+            "Propose consequences for the reported behavior.",
+            "Vote on behavioral modification plan and consequences for the reported person.",
+            "Contact online community administrators/moderators to approve the behavioral modification plan and consequences.",
+            "Follow up with the reported person.",
+            "Decide further responses.",
+            "Follow up with the reporter."
+          ]
+        },
+        {
+          "title": "Acknowledge the Report",
+          "content": [
+            "We will have members of the Code of Conduct team online at all times during the conference. Reporters should receive an emailed acknowledgment of the receipt of their report within 2 hours."
+          ]
+        },
+        {
+          "title": "Conflict of Interest Policy",
+          "content": [
+            "Examples of conflicts of interest include:"
+          ],
+          "list": [
+            "The reporter or reported person is your manager",
+            "You have a romantic or platonic relationship with either the reporter or the reported person. It's fine to participate if they are an acquaintance.",
+            "The reporter or reported person is your metamour. (This is a term used in the poly community; see the short definition for metamour, and a longer description).",
+            "The reporter or reported person is your family member",
+            "The reporter or reported person is your direct client",
+            "The reporter or reported person is someone you work closely with. This could be someone on your team or someone who works on the same project as you.",
+            "The reporter or reported person is a maintainer who regularly reviews your contributions"
+          ],
+          "additionalContent": [
+            "Committee members do not need to state why they have a conflict of interest, only that one exists. Other work group members should not ask why the person has a conflict of interest.",
+            "Anyone who has a conflict of interest will remove themselves from the discussion of the incident, and recuse themselves from voting on a response to the report."
+          ]
+        },
+        {
+          "title": "Evaluating a Report",
+          "subsections": [
+            {
+              "title": "Jurisdiction",
+              "list": [
+                "Is this a Code of Conduct violation? Is this behavior on our list of inappropriate behavior? Is it borderline inappropriate behavior? Does it violate our community norms?",
+                "Did this occur in a space that is within our Code of Conduct's scope? If the incident occurred outside the community, but a community member's mental health or physical safety may be negatively impacted if no action is taken, the incident may be in scope. Private conversations in community spaces are also in scope."
+              ]
+            },
+            {
+              "title": "Impact",
+              "list": [
+                "Did this incident occur in a private conversation or in a public space? Incidents that all community members can see will have more negative impact.",
+                "Does this behavior negatively impact a marginalized group in our community? Is the reporter a person from a marginalized group in our community? How is the reporter being negatively impacted by the reported person's behavior? Are members of the marginalized group likely to disengage with the community if no action was taken on this report?",
+                "Does this incident involve a community leader? Community members often look up to community leaders to set the standard of acceptable behavior."
+              ]
+            },
+            {
+              "title": "Risk",
+              "list": [
+                "Does this incident include sexual harassment?",
+                "Does this pose a safety risk? Does the behavior put a person's physical safety at risk? Will this incident severely negatively impact someone's mental health?",
+                "Is there a risk of this behavior being repeated? Does the reported person understand why their behavior was inappropriate? Is there an established pattern of behavior from past reports?"
+              ]
+            }
+          ],
+          "additionalContent": [
+            "Reports which involve higher risk or higher impact may face more severe consequences than reports which involve lower risk or lower impact."
+          ]
+        },
+        {
+          "title": "Propose a Behavioral Modification Plan",
+          "content": [
+            "The CoC team will determine a concrete behavioral modification plan that ensures the inappropriate behavior is not repeated. The CoC team will also discuss what actions may need to be taken if the reported person does not agree to the behavioral modification plan.",
+            "What follows are examples of possible behavioral modification plans for incidents that occur in online spaces under the scope of this Code of Conduct. This behavioral modification list is not inclusive, and the event staff reserves the right to take any action it deems necessary."
+          ],
+          "list": [
+            "Requiring that the reported person not use specific language",
+            "Requiring that the reported person not join in on specific types of discussions",
+            "Requiring that the reported person not send private messages to a community member",
+            "Requiring that the reported person not join specific communication channels",
+            "Removing the reported person from administrator or moderator rights to community infrastructure",
+            "Removing a volunteer from their duties and responsibilities",
+            "Removing a person from leadership of relevant organizations",
+            "Removing a person from membership of relevant organizations"
+          ]
+        },
+        {
+          "title": "Propose Consequences",
+          "content": [
+            "What follows are examples of possible consequences of an incident report. This consequences list is not inclusive, and the event staff reserves the right to take any action it deems necessary.",
+            "Possible private responses to an incident include:"
+          ],
+          "list": [
+            "Nothing, if the behavior was determined to not be a Code of Conduct violation",
+            "A verbal or emailed warning",
+            "A final warning",
+            "Temporarily removing the reported person from the online community",
+            "Permanently removing the reported person from the online community",
+            "Publishing an account of the incident",
+            "Escalating the incident to the PSF Code of Conduct Working Group"
+          ]
+        },
+        {
+          "title": "Follow Up with the Reported Person",
+          "content": [
+            "The CoC team will draft a response to the reported person. The email should contain:"
+          ],
+          "list": [
+            "A description of the person's behavior in neutral language",
+            "The negative impact of that behavior",
+            "A concrete behavioral modification plan",
+            "Any consequences of their behavior"
+          ],
+          "additionalContent": [
+            "The CoC team should not state who reported this incident. They should attempt to anonymize any identifying information from the report. The reported person should be discouraged from contacting the reporter to discuss the report. If they wish to apologize to the reporter, the CoC team can accept the apology on behalf of the reporter."
+          ]
+        },
+        {
+          "title": "Decide Further Responses",
+          "content": [
+            "If the reported person provides additional context, the CoC team may need to re-evaluate the behavioral modification plan and consequences."
+          ]
+        },
+        {
+          "title": "Follow Up with the Reporter",
+          "content": [
+            "A person who makes a report should receive a follow-up email stating what action was taken in response to the report. If the CoC team decided no response was needed, they should provide an email explaining why it was not a Code of Conduct violation. Reports that are not made in good faith (such as \"reverse sexism\" or \"reverse racism\") may receive no response.",
+            "The follow-up email should be sent no later than one week after the receipt of the report. If deliberation or follow up with the reported person takes longer than one week, the CoC group should send a status email to the reporter."
+          ]
+        }
+      ]
+    }
+  }
