@@ -2,8 +2,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Newsletter from '@/components/Newsletter';
 import Link from 'next/link';
-import Image from 'next/image';
-import teamData from '@/data/teams.json';
 import cocData from '@/data/codeOfConduct.json';
 
 export default function CodeOfConduct() {
