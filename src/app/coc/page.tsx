@@ -2,20 +2,31 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Newsletter from '@/components/Newsletter';
 import Link from 'next/link';
-import cocData from '@/data/codeOfConduct.json';
+import cocDataJson from '@/data/codeOfConduct.json';
+
+interface CoCSection {
+  title: string;
+  content: string[];
+}
+
+interface CoCFile {
+  sections: CoCSection[];
+}
+
+const cocData: CoCFile[] = cocDataJson as CoCFile[];
 
 export default function CodeOfConduct() {
-  const renderSectionContent = (section: any) => {
+  const renderSectionContent = (section: CoCSection) => {
     if (section.title === "Scope" || section.title === "Inappropriate Behavior") {
       return (
         <ul className="list-disc ml-6 mb-4 text-gray-700">
-          {section.content.map((item: any, index: number) => (
+          {section.content.map((item: string, index: number) => (
             <li key={index} className="mb-2">{item}</li>
           ))}
         </ul>
       );
     } else if (section.title === "Our Process") {
-      return section.content.map((paragraph: any, index: number) => {
+      return section.content.map((paragraph: string, index: number) => {
         if (paragraph.includes("conference_conduct@pyladies.com")) {
           const parts = paragraph.split("conference_conduct@pyladies.com");
           const textBeforeEmail = parts[0];
@@ -63,7 +74,7 @@ export default function CodeOfConduct() {
         return <p key={index} className="mb-4 text-gray-700">{paragraph}</p>;
       });
     } else if (section.title === "Consequences") {
-      return section.content.map((paragraph: any, index: number) => {
+      return section.content.map((paragraph: string, index: number) => {
         if (paragraph.includes("Enforcement Procedures")) {
           const parts = paragraph.split("Enforcement Procedures");
           return (
@@ -79,7 +90,7 @@ export default function CodeOfConduct() {
         return <p key={index} className="mb-4 text-gray-700">{paragraph}</p>;
       });
     }
-    return section.content.map((paragraph: any, index: number) => (
+    return section.content.map((paragraph: string, index: number) => (
       <p key={index} className="mb-4 text-gray-700">{paragraph}</p>
     ));
   };
@@ -98,7 +109,7 @@ export default function CodeOfConduct() {
 
       <main className="container mx-auto px-4 py-12">
         <section className="mb-20 prose lg:prose-lg max-w-4xl mx-auto">
-          {cocData[0].sections.map((section, index) => (
+          {cocData[0].sections.map((section: CoCSection, index: number) => (
             <div key={index} className="mb-10">
               <h2 className="text-3xl font-bold mb-6 font-serif relative inline-block">
                 {section.title}
