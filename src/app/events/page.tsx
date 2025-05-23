@@ -8,8 +8,14 @@ import Link from 'next/link';
 import { upcomingEvents } from '@/data/events';
 import convertToLocalTime from '../../utils/convertToLocalTime';
 
+// Extend the event type to include converted time properties
+type EventWithLocalTime = typeof upcomingEvents[0] & {
+  localDate?: string;
+  localTime?: string;
+};
+
 export default function Events() {
-  const [convertedEvents, setConvertedEvents] = useState(upcomingEvents);
+  const [convertedEvents, setConvertedEvents] = useState<EventWithLocalTime[]>(upcomingEvents);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -17,7 +23,7 @@ export default function Events() {
     setIsClient(true);
     
     // Convert all event times to local timezone
-    const eventsWithLocalTime = upcomingEvents.map(event => {
+    const eventsWithLocalTime: EventWithLocalTime[] = upcomingEvents.map(event => {
       const converted = convertToLocalTime(event.date, event.time);
       return {
         ...event,
