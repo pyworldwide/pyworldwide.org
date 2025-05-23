@@ -1,10 +1,40 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Newsletter from '@/components/Newsletter';
 import Link from 'next/link';
 import { upcomingEvents } from '@/data/events';
-import convertToLocalTime from '../../utils/convertToLocalTime'
+import convertToLocalTime from '../../utils/convertToLocalTime';
+
+// Extend the event type to include converted time properties
+type EventWithLocalTime = typeof upcomingEvents[0] & {
+  localDate?: string;
+  localTime?: string;
+};
+
 export default function Events() {
+  const [convertedEvents, setConvertedEvents] = useState<EventWithLocalTime[]>(upcomingEvents);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    // Mark that we're on the client side
+    setIsClient(true);
+    
+    // Convert all event times to local timezone
+    const eventsWithLocalTime: EventWithLocalTime[] = upcomingEvents.map(event => {
+      const converted = convertToLocalTime(event.date, event.time);
+      return {
+        ...event,
+        localDate: converted.date,
+        localTime: converted.time
+      };
+    });
+    
+    setConvertedEvents(eventsWithLocalTime);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <header>
@@ -21,7 +51,6 @@ export default function Events() {
         <section className="max-w-4xl mx-auto">
           <div className="bg-white p-8 rounded-lg border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mb-12">
             <div className="text-center">
-
               <h2 className="text-3xl font-bold mb-6 font-serif relative inline-block">
                 Our Events
                 <div className="absolute -bottom-2 left-0 w-full h-4 bg-yellow-300 -z-10 transform -rotate-1"></div>
@@ -29,9 +58,7 @@ export default function Events() {
             </div>
 
             <div className="space-y-6 mt-8">
-              {upcomingEvents.map((event) => {
-                const { date, time } = convertToLocalTime(event.date, event.time);
-                return(
+              {convertedEvents.map((event) => (
                 <div 
                   key={event.id}
                   className="border-2 border-black rounded-lg p-6 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] 
@@ -42,11 +69,13 @@ export default function Events() {
                       <h3 className="text-xl font-bold mb-2">{event.title}</h3>
                       <div className="space-y-1 text-gray-600">
                         <p className="flex items-center gap-2">
-                            <span>📅</span> {date}
-                          </p>
-                          <p className="flex items-center gap-2">
-                            <span>⏰</span> {time}
-                          </p>
+                          <span>📅</span> 
+                          {isClient && event.localDate ? event.localDate : event.date}
+                        </p>
+                        <p className="flex items-center gap-2">
+                          <span>⏰</span> 
+                          {isClient && event.localTime ? event.localTime : event.time}
+                        </p>
                         <p className="flex items-center gap-2">
                           <span>📍</span> {event.location}
                         </p>
@@ -63,11 +92,9 @@ export default function Events() {
                   </div>
                   <p className="mt-4 text-gray-700">{event.description}</p>
                 </div>
-              )})}
+              ))}
             </div>
           </div>
-
-    
         </section>
       </main>
 
