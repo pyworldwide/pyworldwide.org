@@ -71,9 +71,6 @@ export default function Events() {
                         <p className="flex items-center gap-2">
                           <span>📅</span> 
                           {isClient && event.localDate ? event.localDate : event.date}
-                          {!isClient && (
-                            <span className="text-xs text-gray-400 ml-2">(converting to your timezone...)</span>
-                          )}
                         </p>
                         <p className="flex items-center gap-2">
                           <span>⏰</span> 

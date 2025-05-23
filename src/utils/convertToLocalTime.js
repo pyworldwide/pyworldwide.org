@@ -88,6 +88,16 @@ const timezoneOffsets = {
   'FNT': -2,  // Fernando de Noronha Time
 };
 
+// Helper function to get GMT offset string
+const getGMTOffset = (date) => {
+  const offset = -date.getTimezoneOffset(); // getTimezoneOffset returns negative for positive offsets
+  const hours = Math.floor(Math.abs(offset) / 60);
+  const minutes = Math.abs(offset) % 60;
+  const sign = offset >= 0 ? '+' : '-';
+  
+  return `GMT${sign}${hours}:${minutes.toString().padStart(2, '0')}`;
+};
+
 const convertToLocalTime = (dateStr, timeStr) => {
   // Ensure this only runs in the browser
   if (typeof window === 'undefined') {
@@ -113,7 +123,6 @@ const convertToLocalTime = (dateStr, timeStr) => {
   if (timeZone && timezoneOffsets.hasOwnProperty(timeZone.toUpperCase())) {
     const offsetHours = timezoneOffsets[timeZone.toUpperCase()];
     // Convert source timezone to UTC
-    // If time is 6:00 PM IST (UTC+5.5), then UTC is 6:00 PM - 5.5 hours = 12:30 PM UTC
     utcTimestamp = Date.UTC(year, month - 1, day, hours, minutes) - (offsetHours * 60 * 60 * 1000);
   } else {
     // If no timezone specified, treat as UTC
@@ -121,13 +130,13 @@ const convertToLocalTime = (dateStr, timeStr) => {
   }
 
   // Create a Date object from the UTC timestamp
-  // This will automatically display in the user's local timezone
   const localDate = new Date(utcTimestamp);
 
-  // Get user's timezone for more accurate formatting
+  // Get user's timezone info
   const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const gmtOffset = getGMTOffset(localDate);
 
-  // Format the results using the user's actual timezone
+  // Format the results
   const dateFormatter = new Intl.DateTimeFormat('en-US', {
     weekday: 'long',
     year: 'numeric',
@@ -143,9 +152,12 @@ const convertToLocalTime = (dateStr, timeStr) => {
     timeZone: userTimeZone
   });
 
+  const formattedTime = timeFormatter.format(localDate);
+  const timeWithOffset = `${formattedTime} ( ${gmtOffset} )`;
+
   return {
     date: dateFormatter.format(localDate),
-    time: timeFormatter.format(localDate),
+    time: timeWithOffset,
   };
 };
 
