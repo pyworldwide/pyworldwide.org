@@ -27,8 +27,8 @@ export default function CodeOfConduct() {
       );
     } else if (section.title === "Our Process") {
       return section.content.map((paragraph: string, index: number) => {
-        if (paragraph.includes("conference_conduct@pyladies.com")) {
-          const parts = paragraph.split("conference_conduct@pyladies.com");
+        if (paragraph.includes("info.pyworldwide+coc@gmail.com")) {
+          const parts = paragraph.split("info.pyworldwide+coc@gmail.com");
           const textBeforeEmail = parts[0];
           const textAfterOriginalEmail = parts[1] ? parts[1].substring(parts[1].indexOf(" which is monitored")) : " which is monitored by the Code of Conduct team.";
 
