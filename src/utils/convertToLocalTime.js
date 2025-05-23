@@ -89,6 +89,11 @@ const timezoneOffsets = {
 };
 
 const convertToLocalTime = (dateStr, timeStr) => {
+  // Ensure this only runs in the browser
+  if (typeof window === 'undefined') {
+    return { date: dateStr, time: timeStr };
+  }
+
   const match = timeStr.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)\s*(\w+)?$/i);
   if (!match) return { date: dateStr, time: timeStr };
 
@@ -103,39 +108,54 @@ const convertToLocalTime = (dateStr, timeStr) => {
   // Parse the date
   const [year, month, day] = dateStr.split('-').map(Number);
   
-  // Create date in the source timezone
-  let sourceDate;
+  // Create the correct UTC timestamp
+  let utcTimestamp;
   if (timeZone && timezoneOffsets.hasOwnProperty(timeZone.toUpperCase())) {
-    // Create UTC date first, then adjust for timezone offset
-    const utcDate = new Date(Date.UTC(year, month - 1, day, hours, minutes));
     const offsetHours = timezoneOffsets[timeZone.toUpperCase()];
-    sourceDate = new Date(utcDate.getTime() - (offsetHours * 60 * 60 * 1000));
+    // Convert source timezone to UTC
+    // If time is 6:00 PM IST (UTC+5.5), then UTC is 6:00 PM - 5.5 hours = 12:30 PM UTC
+    utcTimestamp = Date.UTC(year, month - 1, day, hours, minutes) - (offsetHours * 60 * 60 * 1000);
   } else {
-    // If no timezone specified or not recognized, treat as UTC
-    sourceDate = new Date(Date.UTC(year, month - 1, day, hours, minutes));
+    // If no timezone specified, treat as UTC
+    utcTimestamp = Date.UTC(year, month - 1, day, hours, minutes);
   }
 
-  // Convert to local time (this happens automatically when creating a local date)
-  const localDate = new Date(sourceDate.getTime());
+  // Create a Date object from the UTC timestamp
+  // This will automatically display in the user's local timezone
+  const localDate = new Date(utcTimestamp);
 
-  // Format the results using Intl APIs for better browser compatibility
+  // Get user's timezone for more accurate formatting
+  const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  // Format the results using the user's actual timezone
   const dateFormatter = new Intl.DateTimeFormat('en-US', {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
+    day: 'numeric',
+    timeZone: userTimeZone
   });
 
   const timeFormatter = new Intl.DateTimeFormat('en-US', {
     hour: 'numeric',
     minute: '2-digit',
-    hour12: true
+    hour12: true,
+    timeZone: userTimeZone
   });
 
   return {
     date: dateFormatter.format(localDate),
     time: timeFormatter.format(localDate),
   };
+};
+
+// For React components, you might want to use this in useEffect or ensure client-side rendering
+export const convertToLocalTimeClient = (dateStr, timeStr) => {
+  // This ensures it only runs after component mounts (client-side)
+  if (typeof window === 'undefined') {
+    return null; // Return null on server-side, handle in component
+  }
+  return convertToLocalTime(dateStr, timeStr);
 };
 
 export default convertToLocalTime;
