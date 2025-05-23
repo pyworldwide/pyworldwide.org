@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import Newsletter from '@/components/Newsletter';
 import Link from 'next/link';
 import { upcomingEvents } from '@/data/events';
-
+import convertToLocalTime from '../../utils/convertToLocalTime'
 export default function Events() {
   return (
     <div className="min-h-screen">
@@ -29,7 +29,9 @@ export default function Events() {
             </div>
 
             <div className="space-y-6 mt-8">
-              {upcomingEvents.map((event) => (
+              {upcomingEvents.map((event) => {
+                const { date, time } = convertToLocalTime(event.date, event.time);
+                return(
                 <div 
                   key={event.id}
                   className="border-2 border-black rounded-lg p-6 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] 
@@ -40,16 +42,11 @@ export default function Events() {
                       <h3 className="text-xl font-bold mb-2">{event.title}</h3>
                       <div className="space-y-1 text-gray-600">
                         <p className="flex items-center gap-2">
-                          <span>📅</span> {new Date(event.date).toLocaleDateString('en-US', { 
-                            weekday: 'long',
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          })}
-                        </p>
-                        <p className="flex items-center gap-2">
-                          <span>⏰</span> {event.time}
-                        </p>
+                            <span>📅</span> {date}
+                          </p>
+                          <p className="flex items-center gap-2">
+                            <span>⏰</span> {time}
+                          </p>
                         <p className="flex items-center gap-2">
                           <span>📍</span> {event.location}
                         </p>
@@ -66,7 +63,7 @@ export default function Events() {
                   </div>
                   <p className="mt-4 text-gray-700">{event.description}</p>
                 </div>
-              ))}
+              )})}
             </div>
           </div>
 
