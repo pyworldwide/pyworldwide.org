@@ -1,7 +1,7 @@
 export const upcomingEvents = [
     {
       id: 1,
-      title: "Pyworldwide monthly meetup (June Edition)",
+      title: "PyWorldWide monthly meetup (June Edition)",
       date: "2025-06- 21",
       time: "6:00 PM IST",
       location: "Virtual",
