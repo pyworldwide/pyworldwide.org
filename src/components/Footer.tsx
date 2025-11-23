@@ -22,7 +22,7 @@ const footerLinks = {
   ],
   social: [
     { name: "GitHub", href: "https://github.com/pyworldwide" },
-    { name: "Twitter", href: "" },
+    { name: "Twitter", href: "https://x.com/pyworldwide" },
     { name: "Discord", href: "" },
     { name: "LinkedIn", href: "" },
   ],
