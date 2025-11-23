@@ -6,7 +6,7 @@ const footerLinks = {
     { name: "Join Us", href: "" },
     { name: "Contribute", href: "https://github.com/pyworldwide" },
     { name: "Core Values", href: "" },
-    { name: "Code of Conduct", href: "" },
+    { name: "Code of Conduct", href: "/coc" },
   ],
   resources: [
     { name: "Docs", href: "" },
